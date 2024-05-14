@@ -1,18 +1,16 @@
-# Salesforce DX Project: Next Steps
+# Shipment Status Component
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This Lightning Web Component (LWC) provides a simple interface to check the status of a shipment using a tracking number.
 
-## How Do You Plan to Deploy Your Changes?
+## Features
+- Input field to enter the tracking number.
+- Button to trigger the status retrieval.
+- Display of the shipment status once retrieved.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Usage
+1. Place the `shipmentStatus` component in Lightning App Builder page.
+2. Enter the tracking number of the shipment in the provided input field.
+3. Click on the "Get Status" button to retrieve the shipment status.
 
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Apex Class
+The `ShippingDetailsController` Apex class handles the backend logic for retrieving the shipment status. The `getShippingStatus` method sends a GET request to an external API endpoint to retrieve the shipment status based on the provided tracking number. It returns a ShippingStatusResponse object containing the status, error code, and error message.
